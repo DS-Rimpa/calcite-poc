@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "defaultSchema": "EMPLOYEELIST",
+  "schemas": [
+    {
+      "name": "EMPLOYEELIST",
+      "tables": [
+        {
+          "name": "Employees",
+          "type": "custom",
+          "factory": "com.antelope.com.rewriter.EmployeesTableFactory"
+        }
+      ]
+    }
+  ]
+}

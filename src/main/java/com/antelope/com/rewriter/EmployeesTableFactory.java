@@ -15,33 +15,33 @@ import org.apache.calcite.sql.type.SqlTypeName;
 
 import java.util.Map;
 
-public class OrdersTableFactory implements TableFactory<Table> {
+public class EmployeesTableFactory implements TableFactory<Table> {
     @Override
     public Table create(SchemaPlus schema, String name, Map<String, Object> operand, RelDataType rowType) {
         final Object[][] rows = {
-                {1, "paint", 10},
-                {2, "paper", 5},
-                {3, "brush", 12},
-                {4, "paint", 3},
-                {5, "paint", 3}
+                {1, "data1", 10},
+                {2, "data2", 5},
+                {3, "data3", 12},
+                {4, "data4", 3},
+                {5, "data5", 3}
         };
-        return new OrdersTable(ImmutableList.copyOf(rows));
+        return new EmployeeTable(ImmutableList.copyOf(rows));
     }
 
-    public static class OrdersTable implements ScannableTable {
+    public static class EmployeeTable implements ScannableTable {
         protected final RelProtoDataType protoRowType = new RelProtoDataType() {
             public RelDataType apply(RelDataTypeFactory a0) {
                 return a0.builder()
                         .add("id", SqlTypeName.INTEGER)
-                        .add("product", SqlTypeName.VARCHAR, 10)
-                        .add("units", SqlTypeName.INTEGER)
+                        .add("employee_names", SqlTypeName.VARCHAR, 10)
+                        .add("work_days", SqlTypeName.INTEGER)
                         .build();
             }
         };
 
         private final ImmutableList<Object[]> rows;
 
-        public OrdersTable(ImmutableList<Object[]> rows) {
+        public EmployeeTable(ImmutableList<Object[]> rows) {
             this.rows = rows;
         }
 
