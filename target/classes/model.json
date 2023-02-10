@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "defaultSchema": "MYTEST",
+  "schemas": [ {
+    "type": "jdbc",
+    "name": "poc",
+    "jdbcUser": "root",
+    "jdbcPassword": "rimpA@5536",
+    "jdbcUrl": "jdbc:mysql://localhost:3306/poc"
+  } ]
+}
